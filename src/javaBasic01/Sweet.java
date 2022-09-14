@@ -1,6 +1,6 @@
 package javaBasic01;
 
-public class Sweet {
+public abstract class Sweet {
 	private String name;
     private double weight;
     private double cost;

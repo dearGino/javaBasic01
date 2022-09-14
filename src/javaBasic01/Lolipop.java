@@ -2,7 +2,7 @@ package javaBasic01;
 
 public class Lolipop extends Sweet {
 
-    private String color = "οπξηπΰχνϋι"; 
+    private String color = "Π±ΠµΡΡ†Π²ΠµΡ‚Π½Ρ‹ΠΉ"; 
 
 
     public Lolipop (String name, float weight, float cost, String color){
@@ -16,7 +16,7 @@ public class Lolipop extends Sweet {
 
     @Override
     public void getInfo (){
-        System.out.println( color +" λεδενεφ " + getName()+":   "+getWeight()+"gr,  "+getCost()+"rub");
+        System.out.println( color +" Π»ΠµΠ΄ΠµΠ½ΠµΡ† " + getName()+":\t\t"+getWeight()+" gr,   "+getCost()+" rub");
     }
 
 }

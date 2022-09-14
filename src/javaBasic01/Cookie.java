@@ -2,7 +2,7 @@ package javaBasic01;
 
 public class Cookie extends Sweet {
 
-    private String filling = "пустой"; 
+    private String filling = "РїСѓСЃС‚РѕР№"; 
 
     
     public Cookie (String name, float weight, float cost, String filling){
@@ -16,7 +16,7 @@ public class Cookie extends Sweet {
 
     @Override
     public void getInfo (){
-        System.out.println( "печенье " + getName()+ " с начинкой " + getFilling() + ":   " +getWeight()+"gr,  "+getCost()+"rub");
+        System.out.println( "РїРµС‡РµРЅСЊРµ " + getName()+ " СЃ РЅР°С‡РёРЅРєРѕР№ " + getFilling() + ":\t" +getWeight()+" gr,   "+getCost()+" rub");
     }
 
 }

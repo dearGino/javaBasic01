@@ -21,22 +21,31 @@ public class Box {
     }
 
     public void removeSweet (int index){
-        weight-=sweetsArray.get(index).getWeight();
-        cost-=sweetsArray.get(index).getCost();
-        System.out.print("�� ������� �������:  ");
-        sweetsArray.get(index).getInfo();
-        sweetsArray.remove(index);
-        System.out.println();
+    	if (index>=0 & index<sweetsArray.size()) {
+            weight-=sweetsArray.get(index).getWeight();
+            cost-=sweetsArray.get(index).getCost();
+            System.out.print("Из коробки убрали:  ");
+            sweetsArray.get(index).getInfo();
+            sweetsArray.remove(index);
+            System.out.println();
+    	} else {
+    		System.out.println("Неподходящий индекс");
+    	}
+
     }
 
     public void removeSweetLast (){
-        int index = sweetsArray.size();
-        weight-=sweetsArray.get(index-1).getWeight();
-        cost-=sweetsArray.get(index-1).getCost();
-        System.out.print("�� ������� �������:   ");
-        sweetsArray.get(index-1).getInfo();
-        sweetsArray.remove(index-1);
-        System.out.println();
+    	if (sweetsArray.size()>0) {
+            int index = sweetsArray.size();
+            weight-=sweetsArray.get(index-1).getWeight();
+            cost-=sweetsArray.get(index-1).getCost();
+            System.out.print("Из коробки убрали:   ");
+            sweetsArray.get(index-1).getInfo();
+            sweetsArray.remove(index-1);
+            System.out.println();
+    	} else {
+    		System.out.println("В коробке нет последнего элемента, потому что там пусто");
+    	}
     }
 
     public double getCost (){
@@ -49,9 +58,9 @@ public class Box {
     
     
     public void getInsides (){
-    	System.out.println("������� � �������, � ���:....");
+    	System.out.println("Посмотрим, что внутри коробки:....");
     	if(sweetsArray.size() == 0) {
-    		System.out.println("����� � �������.");
+    		System.out.println("Пусто и грустно.");
     	} else {
     		int i=1;
     		for(Sweet sweet : sweetsArray){
@@ -65,24 +74,32 @@ public class Box {
 
     
     public void getRidOfWeight (float reference){
-    	sortByWeight();
-        while (weight > reference){
-        	int index = sweetsArray.size()-1;
-            weight-= sweetsArray.get(index).getWeight();
-            sweetsArray.remove(index);
+    	if (reference > 0) {
+        	sortByWeight();
+            while (weight > reference){
+            	int index = sweetsArray.size()-1;
+                weight -= sweetsArray.get(index).getWeight();
+                sweetsArray.remove(index);
+            }
+            System.out.println("Оптимизируем коробку до " + reference + " gr по ВЕСУ");
+        } else {
+        	System.out.println("Неподходящий параметр веса");
         }
-        System.out.println("�������� ������. ��� ������� " + getWeight());
     }
 
     
     public void getRidOfCost (float reference){
-    	sortByCost();
-        while (cost > reference){
-        	int index = sweetsArray.size()-1;
-            cost= cost- sweetsArray.get(index).getCost();
-            sweetsArray.remove(index);
+    	if (reference > 0) {
+        	sortByCost();
+            while (weight > reference){
+            	int index = sweetsArray.size()-1;
+                weight -= sweetsArray.get(index).getWeight();
+                sweetsArray.remove(index);
+            }
+            System.out.println("Оптимизируем коробку до " + reference + " gr по ЦЕНЕ");
+    	} else {
+        	System.out.println("Неподходящий параметр веса");
         }
-        System.out.println("�������� ������. C�������� ������� "+getCost());
     }
     
     
