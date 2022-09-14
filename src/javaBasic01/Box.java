@@ -3,7 +3,7 @@ package javaBasic01;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Box {
+public class Box implements BoxMethods{
     private double weight;
     private double cost;
     private ArrayList<Sweet> sweetsArray;
@@ -21,7 +21,7 @@ public class Box {
     }
 
     public void removeSweet (int index){
-    	if (index>=0 & index<sweetsArray.size()) {
+    	if (index>=0 && index<sweetsArray.size()) {
             weight-=sweetsArray.get(index).getWeight();
             cost-=sweetsArray.get(index).getCost();
             System.out.print("Из коробки убрали:  ");
