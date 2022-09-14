@@ -64,7 +64,7 @@ class Main{
         //Что внутри коробки
         box.getInsides();
         
-        //Есть 1200р, чтобы их хватило на коробку, уберем часть сладостей
+        //Желаемый вес коробки- 200гр, уберем часть сладостей
         System.out.println("Сейчас коробка сладостей весит - " + box.getWeight());
         box.getRidOfCost(200);
         System.out.println("Теперь коробка весит " + box.getWeight()+" gr\n");
