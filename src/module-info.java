@@ -1,0 +1,2 @@
+module javaBasic01 {
+}
